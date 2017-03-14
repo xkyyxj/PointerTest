@@ -14,6 +14,7 @@ void make_descriptor(unsigned int num,INT_FUNC func){
     start += num * sizeof(struct int_descriptor);
     struct int_descriptor *descriptor = (struct int_descriptor*)start;
     descriptor->low_addr=0x1234;
+    descriptor->descriptor=(u16)func;
     (*func)();
 }
 
